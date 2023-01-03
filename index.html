@@ -1,0 +1,56 @@
+<html>
+    <body>
+        <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        //jeactjs pure
+        /*const root = document.getElementById('root');
+        const title = React.createElement(
+            'h3',
+            {
+                id: 'title',
+                onMouseEnter: () => console.log('mouse enter'),
+            },
+            'Hello Im a itle'
+        );
+        const btn = React.createElement(
+            'button', 
+            { 
+                onClick: () => console.log('im clicked'),
+                style: {
+                    backgroundColor: 'tomato'
+                },
+            }, 
+            'Click me!'
+        );
+        const container = React.createElement('div', null, [title, btn]);
+        ReactDOM.render(container, root);*/
+        //reactjs with jsx
+        const root = document.getElementById('root'); 
+        const Title = () => (
+            <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
+                Hello Im a title
+            </h3>
+        );
+        const Button = () => (
+            <button
+                style={{
+                    backgroundColor: "tomato"
+                }}
+                onClick={() => console.log('im clicked')}
+            >
+            Click me!
+            </button>
+        );
+        const Container = () => (
+            <div>
+                <Title />
+                <Button />
+            </div>
+        );
+        ReactDOM.render(<Container />, root);
+    </script>
+</html>
